@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# ☀️ WeatherNow
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive weather dashboard built with **React 19**, **Tailwind CSS**, and **Recharts**. Integrates 3 weather APIs to deliver real-time data, interactive charts, and a dynamic video-powered UI.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- 🌡️ **Real-time Weather** — Current conditions with dynamic video backgrounds
+- 📊 **Interactive Charts** — 24-hour forecast with 6 switchable metrics (Recharts)
+- 🗺️ **Live Weather Map** — Windy-powered interactive map with overlay controls
+- 📅 **8-Day Forecast** — Daily forecast with custom weather icons
+- ⏰ **48-Hour Hourly** — Drag-to-scroll hourly forecast strip
+- 🎨 **Dark/Light Theme** — Full dual-theme support with smooth transitions
+- 📱 **Fully Responsive** — Optimized for mobile, tablet, and desktop
+- 🔍 **Smart Search** — Autocomplete city search with debounce & geolocation
+- ⚙️ **Unit Settings** — Configurable temperature, wind, pressure, distance units
+- 💾 **Saved Cities** — localStorage-persisted favorite locations
 
-### `yarn start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Technology | Purpose |
+|---|---|
+| React 19 | UI framework |
+| Tailwind CSS | Utility-first styling |
+| Recharts | Data visualization |
+| Framer Motion | Animations |
+| Axios | HTTP client |
+| Lucide React | Icon library |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🌐 APIs Used
 
-### `yarn test`
+| API | Version | Data Provided |
+|---|---|---|
+| OpenWeatherMap | One Call 3.0 | Current, hourly, daily weather |
+| WeatherAPI.com | v1 | UV index, AQI, search suggestions |
+| Windy | v2 | Interactive map, wind forecast |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Getting Started
 
-### `yarn build`
+### Prerequisites
+- Node.js ≥ 18
+- yarn or npm
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# 1. Clone the repository
+git clone <repo-url>
+cd weather-web
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 2. Install dependencies
+yarn install
 
-### `yarn eject`
+# 3. Set up environment variables
+cp .env.example .env
+# Edit .env with your API keys
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# 4. Start development server
+yarn start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📁 Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+src/
+├── api/
+│   └── weatherService.js    # Centralized API service layer
+├── hooks/
+│   ├── useWeather.js        # Main weather data hook
+│   ├── useWeatherVideo.js   # Weather-based video mapping
+│   └── useDebounce.js       # Input debounce utility
+├── components/
+│   ├── WeatherCard.jsx      # Hero card with video background
+│   ├── WeatherChart.jsx     # Interactive forecast chart
+│   ├── WeatherMap.jsx       # Windy map integration
+│   ├── Forecast.jsx         # 8-day daily forecast
+│   ├── HourlyForecast.jsx   # 48-hour scrollable strip
+│   ├── HeaderControls.jsx   # Clock, theme toggle, favorites
+│   ├── SearchBar.jsx        # Search with autocomplete
+│   ├── SettingsMenu.jsx     # Unit & theme settings
+│   ├── MediaBackground.jsx  # Global video/image background
+│   ├── LifestyleActivities.jsx  # Activity recommendations
+│   └── StatusStates.jsx     # Loading & error states
+├── assets/
+│   ├── icons/               # Custom PNG weather icons
+│   └── backgrounds/         # Background images
+├── App.js                   # Root orchestrator
+├── index.js                 # Entry point
+└── index.css                # Global styles & Tailwind imports
+```
 
-## Learn More
+## 👨‍💻 Author
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+IWS Midterm Application — © 2026 WeatherNow
