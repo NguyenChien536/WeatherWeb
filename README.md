@@ -92,4 +92,4 @@ src/
 
 ## 👨‍💻 Author
 
-IWS Midterm Application — © 2026 WeatherNow
+Nguyen Chien
